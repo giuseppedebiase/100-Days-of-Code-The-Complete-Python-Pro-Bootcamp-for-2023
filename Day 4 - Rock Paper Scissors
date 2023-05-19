@@ -41,6 +41,8 @@ elif computer_choice == choice:
   print("Computer chose:")
   print(sign[computer_choice])
   print("It's a draw!")
+elif choice < 0 or choice >= 3:
+  print("Invalid number, you lose.")
 else:
   print(sign[choice])
   print("Computer chose:")
