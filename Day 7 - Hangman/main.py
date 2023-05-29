@@ -1,7 +1,9 @@
 import random
 import hangman_words
+#imports logo and hangman art from the file hangman_art
 import hangman_art
 
+#imports one of the word from the file hangman_words.py
 chosen_word = random.choice(hangman_words.word_list)
 word_length = len(chosen_word)
 
@@ -10,20 +12,19 @@ lives = 6
 
 print(hangman_art.logo)
 
-#Create blanks
+#Create blanks, so that the user will see a series of _ equal to the number of letters in the chosen word
 display = []
 for _ in range(word_length):
     display += "_"
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
-
+    #Check if the user had already chosen the same letter
     if guess in display:
       print("You've already chosen this letter.")
-    #Check guessed letter
+    #Check guessed letter and substitute it to the blanks
     for position in range(word_length):
         letter = chosen_word[position]
-        #print(f"Current position: {position}\n Current letter: {letter}\n Guessed letter: {guess}")
         if letter == guess:
             display[position] = letter
 
