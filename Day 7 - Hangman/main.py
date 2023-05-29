@@ -36,7 +36,7 @@ while nr_ > 0 and lives > 0:
     print(f'The letter "{guess}" is not in the word.')
     lives -= 1
     if lives == 0:
-      print("You lose. The solution is '{chosen_word}'.")
+      print(f"You lose. The solution is '{chosen_word}'.")
   print(f"{' '.join(display)}")
 
 #If there are no more blanks the user wins
