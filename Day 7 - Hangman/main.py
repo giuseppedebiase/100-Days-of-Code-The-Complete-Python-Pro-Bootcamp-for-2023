@@ -49,5 +49,6 @@ while nr_ > 0 and lives > 0:
     print("You win.")
     
   print(lives, hangman_art.stages[lives])
-  tried_letters.append(guess)
+  if guess not in tried_letters:
+    tried_letters.append(guess)
   print(f"You've already tried the following letters: {tried_letters}")
